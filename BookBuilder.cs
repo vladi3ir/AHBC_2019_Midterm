@@ -5,7 +5,7 @@ using System.IO;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-    public class BookBuilder : IBuilder<Book>
+    public class BookBuilder
     {
         private Book _book = new Book();
 
