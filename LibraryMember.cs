@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace AHBC_2019_Midterm_JulyBC
 {
     public class LibraryMember
@@ -39,6 +41,42 @@ namespace AHBC_2019_Midterm_JulyBC
             } while (!isValidOption);
 
             return MenuOptions.Quit;
+        }
+
+        public static void MemberSearchByAuthor(List<Book> allBooksList)
+        {
+            Console.WriteLine("Enter the author you'd like to search:");
+            string userInput = Console.ReadLine();
+            var searcher = new Search();
+            var searchResults = searcher.SearchByAuthor(userInput, allBooksList);
+
+            if (searchResults.Count == 0)
+            {
+                Console.WriteLine("No results found.");
+            }
+            else
+            {
+                Console.WriteLine("Search results:");
+                Menu.DisplayBookList(searchResults);
+            }
+        }
+
+        public static void MemberSearchByTitle(List<Book> allBooksList)
+        {
+            Console.WriteLine("Enter the keyword you'd like to search:");
+            string userInput = Console.ReadLine();
+            var searcher = new Search();
+            var searchResults = searcher.SearchByAuthor(userInput, allBooksList);
+
+            if (searchResults.Count == 0)
+            {
+                Console.WriteLine("No results found.");
+            }
+            else
+            {
+                Console.WriteLine("Search results:");
+                Menu.DisplayBookList(searchResults);
+            }
         }
     }
 }
