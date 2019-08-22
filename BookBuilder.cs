@@ -5,9 +5,9 @@ using System.IO;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-    //public class BookBuilder
-    //{
-    //    private Book _book = new Book();
+    public class BookBuilder
+    {
+        private Book _book = new Book();
 
     //    private void Build(Book)
     //    {
@@ -16,5 +16,5 @@ namespace AHBC_2019_Midterm_JulyBC
 
     //    }
 
-    //}
+    }
 }

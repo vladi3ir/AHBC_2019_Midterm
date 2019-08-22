@@ -21,7 +21,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     string status = item.IsCheckedOut.ToString();
                     string returnDate = item.ReturnDate.ToString();
 
-                    var saveLine = (title, author, status, returnDate);
+                    string saveLine = ($"{title}//{author}//{status}//{returnDate}");
 
                     writer.WriteLine(saveLine);
                 }
@@ -35,19 +35,24 @@ namespace AHBC_2019_Midterm_JulyBC
                 var entireFile = reader.ReadToEnd();
                 var linesArray = entireFile.Split("\r\n");
                 List<Books> _BookList = new List<Books>();
+                
 
-                var line = reader.ReadLine();
+                string line = reader.ReadLine();
+
 
                 foreach (var _line in linesArray)
                 {
-                    string[] bookInfo = _line.Split(",");
+                    string[] bookInfo = _line.Split("//");
 
-                    string title = bookInfo[0];
-                    string author = bookInfo[1];
-                    bool isCheckedOut = Convert.ToBoolean(bookInfo[2]);
-                    DateTime returnDate = Convert.ToDateTime(bookInfo[3]);
+                    if (bookInfo.Length == 4)
+                    {
+                        string title = bookInfo[0];
+                        string author = bookInfo[1];
+                        bool isCheckedOut = Convert.ToBoolean(bookInfo[2]);
+                        DateTime returnDate = Convert.ToDateTime(bookInfo[3]);
 
-                    _BookList.Add(new Books(title, author, isCheckedOut, returnDate));
+                        _BookList.Add(new Books(title, author, isCheckedOut, returnDate));
+                    }
 
                 }
 
