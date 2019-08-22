@@ -6,8 +6,6 @@ namespace AHBC_2019_Midterm_JulyBC
         DisplayAll = 1,
         SearchByAuthor = 2,
         SearchByTitle = 3,
-        CheckOutBook = 4,
-        ReturnBook = 5,
-        Quit = 6
+        Quit = 4
     }
 }
