@@ -8,9 +8,9 @@ namespace AHBC_2019_Midterm_JulyBC
     class SaveLoad
     {
         public List<String> BooksStringList { get; set; }
-        public List<Books> BooksList { get; set; }
+        public List<Book> BooksList { get; set; }
 
-        public void Save(List<Books> bookList) 
+        public void Save(List<Book> bookList) 
         {
             using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))  //  (file location, bool for overwrite[false] or append[true])
             {
@@ -28,13 +28,13 @@ namespace AHBC_2019_Midterm_JulyBC
             }
         }
 
-        public List<Books> Load()  //Probably going to output a list of books
+        public List<Book> Load()  //Probably going to output a list of books
         {
             using (var reader = new StreamReader("./LibrarySaveFile.txt"))
             {
                 var entireFile = reader.ReadToEnd();
                 var linesArray = entireFile.Split("\r\n");
-                List<Books> _BookList = new List<Books>();
+                List<Book> _BookList = new List<Book>();
                 
 
                 string line = reader.ReadLine();
@@ -51,7 +51,7 @@ namespace AHBC_2019_Midterm_JulyBC
                         bool isCheckedOut = Convert.ToBoolean(bookInfo[2]);
                         DateTime returnDate = Convert.ToDateTime(bookInfo[3]);
 
-                        _BookList.Add(new Books(title, author, isCheckedOut, returnDate));
+                        _BookList.Add(new Book(title, author, isCheckedOut, returnDate));
                     }
 
                 }
