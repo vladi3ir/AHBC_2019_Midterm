@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-    class Program
+    public class BookList
     {
-        static void Main(string[] args)
-        {
-            List<Books> books = new List<Books>
+
+        List<Books> books = new List<Books>
         {
             new Books("20 Love Poems and a Song of Despair", "Pablo Neruda", true, new DateTime()),
             new Books("1984", "Geogre Orwell", false, new DateTime(2019,9,30)),
@@ -21,14 +21,10 @@ namespace AHBC_2019_Midterm_JulyBC
             new Books("To Kill a Mockingbird", "Harper Lee", true, new DateTime()),
             new Books("As I Lay Dying", "William Faulkner", true, new DateTime()),
             new Books("The Lord of the Rings", "J.R.R. Tolkien", true, new DateTime())
-
-
         };
-            var saveLoad = new SaveLoad();
-           // saveLoad.Save(books);
 
-            var book2 = saveLoad.Load();
-            Console.WriteLine(book2[1].Author);
-        }
+        
     }
+
 }
+

@@ -27,18 +27,19 @@ namespace AHBC_2019_Midterm_JulyBC
         ////    return tempList;
         ////}
 
-        public List<Book> SearchByTitle(string userInput, List<Book> listOfBooks)
-        {
-            List<Book> searchResults = new List<Book>();
-            foreach (Book book in listOfBooks)
-            {
-                if (book.Title.Contains(userInput, StringComparison.OrdinalIgnoreCase))
-                {
-                    searchResults.Add(book);
-                }
-            }
+        //    public List<Book> SearchByTitle(string userInput, List<Book> listOfBooks)
+        //    {
+        //        List<Book> searchResults = new List<Book>();
+        //        foreach (Book book in listOfBooks)
+        //        {
+        //            if (book.Title.Contains(userInput, StringComparison.OrdinalIgnoreCase))
+        //            {
+        //                searchResults.Add(book);
+        //            }
+        //        }
 
-            return searchResults;
-        }
+        //        return searchResults;
+        //    }
+        //}
     }
 }
