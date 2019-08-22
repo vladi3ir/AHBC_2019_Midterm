@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
@@ -6,7 +7,12 @@ namespace AHBC_2019_Midterm_JulyBC
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! modified fish tacos");
+            var app = new LibraryApp();
+            app.StartApp();
+
+
+
+
         }
     }
 }
