@@ -19,7 +19,14 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             foreach(Book book in bookList)
             {
-                Console.WriteLine($"{book.Title} by {book.Author}");
+                string bookStatus = "Available";
+
+                if (book.IsCheckedOut)
+                {
+                    bookStatus = "Checked Out";
+                }
+
+                Console.WriteLine($"{book.Title} by {book.Author} | Status: {bookStatus}");
             }
         }
     }
