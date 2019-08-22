@@ -5,12 +5,10 @@ using System.IO;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-    class SaveLoad
+    public static class SaveLoad
     {
-        public List<String> BooksStringList { get; set; }
-        public List<Book> BooksList { get; set; }
 
-        public void Save(List<Book> bookList) 
+        public static void Save(List<Book> bookList) 
         {
             using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))  //  (file location, bool for overwrite[false] or append[true])
             {
@@ -28,9 +26,18 @@ namespace AHBC_2019_Midterm_JulyBC
             }
         }
 
-        public List<Book> Load()  //Probably going to output a list of books
+        public static List<Book> Load()  //Probably going to output a list of books
         {
-            using (var reader = new StreamReader("./LibrarySaveFile.txt"))
+            
+            try
+            {
+                bool shouldGenerateList = !File.Exists("/LibrarySaveFile.txt");
+                if (shouldGenerateList)
+                {
+                    DefaultBookList.PopulateDefaultBookList();
+                }
+
+                using (var reader = new StreamReader("./LibrarySaveFile.txt"))
             {
                 var entireFile = reader.ReadToEnd();
                 var linesArray = entireFile.Split("\r\n");
@@ -60,8 +67,27 @@ namespace AHBC_2019_Midterm_JulyBC
                 return _BookList;
 
             }
+            }
+            catch
+            {
+                return new List<Book>();
+            }
+            
+
         }
 
+        public static bool DoesBookListExist()
+        {
+            try
+            {
+                var reader = new StreamReader("./ThisShouldn'tExist.txt");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 }
