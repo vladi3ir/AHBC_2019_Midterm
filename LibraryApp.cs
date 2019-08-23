@@ -24,10 +24,22 @@ namespace AHBC_2019_Midterm_JulyBC
                 case MenuOptions.SearchByAuthor:
                     searchResults = LibraryMember.MemberSearchByAuthor(bookList);
                     return;
-                case MenuOptions.SearchByTitle:   
+                case MenuOptions.SearchByTitle:
+                    searchResults = LibraryMember.MemberSearchByTitle(bookList);
+                    Console.WriteLine("Select a book");
+                    int choice2 = Int32.Parse(Console.ReadLine());
+                    if (searchResults[choice2 - 1].IsCheckedOut)
+                    {
+                        Console.WriteLine($"Would you like to return {searchResults[choice2 - 1]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Would you like to check this book out?");
+                    }
                     return;
                 case MenuOptions.Quit:
                     return;
+
                 default:
                     break;
             }
