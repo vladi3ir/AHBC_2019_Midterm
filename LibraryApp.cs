@@ -11,30 +11,28 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             var search = new Search();
             
-            List<Book> bookList = SaveLoad.Load(); 
+            List<Book> bookList = SaveLoad.Load();
+            var searchResults = new List<Book>();
       
             MenuOptions choice = LibraryMember.GetMenuSelection();
 
             switch (choice)
             {
                 case MenuOptions.DisplayAll:
+                    Menu.DisplayBookList(bookList);
                     return; 
                 case MenuOptions.SearchByAuthor:
-                    LibraryMember.MemberSearchByAuthor(bookList);
+                    searchResults = LibraryMember.MemberSearchByAuthor(bookList);
                     return;
-                case MenuOptions.SearchByTitle:
-                    LibraryMember.MemberSearchByTitle(bookList);
-                    return;
-                case MenuOptions.CheckOutBook:
-                    return;
-                case MenuOptions.ReturnBook:
+                case MenuOptions.SearchByTitle:   
                     return;
                 case MenuOptions.Quit:
                     return;
-
                 default:
                     break;
             }
+
+            
           
 
         }
