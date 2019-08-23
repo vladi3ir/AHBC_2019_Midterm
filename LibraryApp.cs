@@ -30,7 +30,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     int choice2 = Int32.Parse(Console.ReadLine());
                     if (searchResults[choice2 - 1].IsCheckedOut)
                     {
-                        Console.WriteLine($"Would you like to return {searchResults[choice2 - 1].}");
+                        Console.WriteLine($"Would you like to return {searchResults[choice2 - 1]}");
                     }
                     else
                     {
