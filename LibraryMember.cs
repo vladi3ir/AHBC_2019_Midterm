@@ -37,7 +37,7 @@ namespace AHBC_2019_Midterm_JulyBC
             return MenuOptions.Quit;
         }
 
-        public static void MemberSearchByAuthor(List<Book> allBooksList)
+        public static List<Book> MemberSearchByAuthor(List<Book> allBooksList)
         {
             Console.WriteLine("Enter the author you'd like to search:");
             string userInput = Console.ReadLine();
@@ -53,14 +53,16 @@ namespace AHBC_2019_Midterm_JulyBC
                 Console.WriteLine("Search results:");
                 Menu.DisplayBookList(searchResults);
             }
+
+            return searchResults;
         }
 
-        public static void MemberSearchByTitle(List<Book> allBooksList)
+        public static List<Book> MemberSearchByTitle(List<Book> allBooksList)
         {
             Console.WriteLine("Enter the keyword you'd like to search:");
             string userInput = Console.ReadLine();
             var searcher = new Search();
-            var searchResults = searcher.SearchByAuthor(userInput, allBooksList);
+            var searchResults = searcher.SearchByTitle(userInput, allBooksList);
 
             if (searchResults.Count == 0)
             {
@@ -71,6 +73,8 @@ namespace AHBC_2019_Midterm_JulyBC
                 Console.WriteLine("Search results:");
                 Menu.DisplayBookList(searchResults);
             }
+
+            return searchResults;
         }
     }
 }
