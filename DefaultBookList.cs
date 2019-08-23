@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
@@ -13,8 +12,8 @@ namespace AHBC_2019_Midterm_JulyBC
             new Book("20 Love Poems and a Song of Despair", "Pablo Neruda", false),
             new Book("1984", "Geogre Orwell", true, new DateTime(2019,9,30)),
             new Book("The Art of War", "Sun Tsu", true, new DateTime(2019,8,25)),
-            new Book("48 Laws of Power", "Robert Greene", false,
-            new Book("Moby Dick", "Herman Melville"),
+            new Book("48 Laws of Power", "Robert Greene", false),
+            new Book("Moby Dick", "Herman Melville",false),
             new Book("War and Peace","Leo Tolstoy", true, new DateTime(2019,8,28)),
             new Book("Hamlet", "william Shakespare", false),
             new Book("Heart of Darkness", "Joseph Conrad",false),
