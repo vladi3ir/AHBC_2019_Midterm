@@ -79,9 +79,8 @@ namespace AHBC_2019_Midterm_JulyBC
 
         public static Book SelectBook(List<Book> bookList)
         {
-            int userInput = 0;
+            int userInput;
             bool validInput;
-            bool isBook = false;
 
             do
             {
@@ -90,25 +89,23 @@ namespace AHBC_2019_Midterm_JulyBC
                 if (validInput)
                 {
                     userInput = result;
-                    validInput = true;
+
+                    if (bookList.Count >= (userInput))
+                    {
+                        Console.WriteLine($"You selected {bookList[userInput - 1].Title}");
+                        return bookList[userInput - 1];
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                        validInput = false;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("That was not a valid entry. Please try again:");
                 }
             } while (!validInput);
-
-            do
-            {
-                if (bookList.Count >= (userInput))
-                {
-                    return bookList[userInput - 1];
-                }
-                else
-                {
-                    Console.WriteLine("That is not a valid entry. Please try again:");
-                }
-            } while (!isBook);
 
             return new Book("", "", false);
         }
