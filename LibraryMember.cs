@@ -70,6 +70,9 @@ namespace AHBC_2019_Midterm_JulyBC
                         return MenuOptions.SearchByTitle;
                     case "four":
                     case "4":
+                        return MenuOptions.GoToCart;
+                    case "five":
+                    case "5":
                         return MenuOptions.Quit;
                     default:
                         Console.WriteLine("That is not a valid entry. Please try again:");

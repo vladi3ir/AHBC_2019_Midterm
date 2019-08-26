@@ -6,6 +6,7 @@ namespace AHBC_2019_Midterm_JulyBC
         DisplayAll = 1,
         SearchByAuthor = 2,
         SearchByTitle = 3,
-        Quit = 4
+        GoToCart = 4,
+        Quit = 5
     }
 }
