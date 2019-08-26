@@ -121,6 +121,56 @@ namespace AHBC_2019_Midterm_JulyBC
             return searchResults;
         }
 
+        public static void SelectFromList(List<Book> bookList, List<Book> cart)
+        {
+            Console.WriteLine("Select a book from the list above.");
+            var selectedBook = SelectBook(bookList);
+            bool validInput = false;
+
+            if (selectedBook.IsCheckedOut)
+            {
+                Console.WriteLine("Would you like to return this book (Y/N)?");
+                do
+                {
+                    var userInput = Console.ReadLine();
+                    if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                    {
+                        validInput = true;
+                        Checkout.RetrunBook(selectedBook);
+                    }
+                    else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                    {
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                    }
+                } while (!validInput);
+            }
+            else
+            {
+                Console.WriteLine("Add book to cart (Y/N)?");
+                do
+                {
+                    var userInput = Console.ReadLine();
+                    if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                    {
+                        validInput = true;
+                        cart.Add(selectedBook);
+                    }
+                    else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                    {
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                    }
+                } while (!validInput);
+            }
+        }
+
         public static Book SelectBook(List<Book> bookList)
         {
             int userInput;
@@ -136,7 +186,6 @@ namespace AHBC_2019_Midterm_JulyBC
 
                     if (bookList.Count >= (userInput))
                     {
-                        Console.WriteLine($"You selected {bookList[userInput - 1].Title}");
                         return bookList[userInput - 1];
                     }
                     else
