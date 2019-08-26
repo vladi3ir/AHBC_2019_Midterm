@@ -6,27 +6,22 @@ namespace AHBC_2019_Midterm_JulyBC
     public static class Checkout
     {
 
-        public static void CheckoutBook(List<Book> cart)
+        public static void CheckoutBook(Book book)
         {
-            foreach (var item in cart)
-            {
-                item.IsCheckedOut = true;
-                item.ReturnDate = DateTime.Now.AddDays(14);
-            }
+            book.IsCheckedOut = true;
+            book.ReturnDate = DateTime.Now.AddDays(14);
         }
 
-        public static void RetrunBook(List<Book> cart)
-
+        public static void ReturnBook(Book book)
         {
+            book.IsCheckedOut = false;
+        }
 
-            foreach (var item in cart)
-            {
-
-                item.IsCheckedOut = false;
-
-            }
-
+        public static List<Book> EmptyCart(List<Book> cart)
+        {
+            List<Book> emptyCart = new List<Book>();
+            return emptyCart;
         }
     }
-}
 
+}
