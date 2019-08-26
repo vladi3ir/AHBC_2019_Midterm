@@ -11,7 +11,8 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("1. Display all books");
             Console.WriteLine("2. Search by author");
             Console.WriteLine("3. Search by title");
-            Console.WriteLine("4. Checkout/Quit");
+            Console.WriteLine("4. Go to cart");
+            Console.WriteLine("5. Quit");
         }
 
         public static void DisplayBookList(List<Book> bookList)
