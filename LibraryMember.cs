@@ -136,7 +136,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
                     {
                         validInput = true;
-                        Checkout.RetrunBook(selectedBook);
+                        Checkout.ReturnBook(selectedBook);
                     }
                     else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
                     {
