@@ -76,5 +76,38 @@ namespace AHBC_2019_Midterm_JulyBC
 
             return searchResults;
         }
+
+        public static Book SelectBook(List<Book> bookList)
+        {
+            int userInput;
+            bool validInput;
+
+            do
+            {
+                validInput = int.TryParse(Console.ReadLine(), out int result);
+
+                if (validInput)
+                {
+                    userInput = result;
+
+                    if (bookList.Count >= (userInput))
+                    {
+                        Console.WriteLine($"You selected {bookList[userInput - 1].Title}");
+                        return bookList[userInput - 1];
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                        validInput = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("That was not a valid entry. Please try again:");
+                }
+            } while (!validInput);
+
+            return new Book("", "", false);
+        }
     }
 }
