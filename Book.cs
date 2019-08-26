@@ -10,9 +10,6 @@ namespace AHBC_2019_Midterm_JulyBC
         public string Author { get; set; }
         public bool IsCheckedOut { get; set; }
         public DateTime ReturnDate { get; set; }
-       
-
-        
 
         public Book(string title, string author, bool status, DateTime returnDate)
         {
@@ -21,15 +18,12 @@ namespace AHBC_2019_Midterm_JulyBC
             IsCheckedOut = status;
             ReturnDate = returnDate;
         }
-
         public Book(string title, string author, bool status)
         {
             Title = title;
             Author = author;
             IsCheckedOut = status;
         }
-
-        
 
     }
 }
