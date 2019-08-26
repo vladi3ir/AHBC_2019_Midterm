@@ -38,15 +38,15 @@ namespace AHBC_2019_Midterm_JulyBC
 
             MenuOptions choice = LibraryMember.GetMenuSelection();
 
-            switch (choice)
-            {
-                case 1:
-                    return ;
+            //switch (choice)
+            //{
+            //    case 1:
+            //        return ;
 
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
 
           
 

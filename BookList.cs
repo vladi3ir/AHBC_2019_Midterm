@@ -6,10 +6,13 @@ namespace AHBC_2019_Midterm_JulyBC
 {
     public class BookList
     {
+        DateTime returnDate = DateTime.Now.AddDays(14);
+        
 
+        
         List<Book> books = new List<Book>
         {
-            new Book("20 Love Poems and a Song of Despair", "Pablo Neruda", true, new DateTime()),
+            new Book("20 Love Poems and a Song of Despair", "Pablo Neruda", true),
             new Book("1984", "Geogre Orwell", false, new DateTime(2019,9,30)),
             new Book("The Art of War", "Sun Tsu", false, new DateTime(2019,8,25)),
             new Book("48 Laws of Power", "Robert Greene", true, new DateTime()),
