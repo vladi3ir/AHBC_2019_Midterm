@@ -7,47 +7,63 @@ namespace AHBC_2019_Midterm_JulyBC
 {
     public class LibraryApp
     {
+      
+        Search search = new Search();
+        List<Book> bookList = SaveLoad.Load();
+        List<Book> searchResults = new List<Book>();
+        List<Book> cart = new List<Book>();
+        bool appRunning = false;
+
         public void StartApp()
         {
-            var search = new Search();
-            
-            List<Book> bookList = SaveLoad.Load();
-            var searchResults = new List<Book>();
-      
-            MenuOptions choice = LibraryMember.GetMenuSelection();
+            do
+            {
+                MenuOptions choice = LibraryMember.GetMenuSelection();
+                ExecuteMainMenuChoice(choice, bookList);
+            } while (appRunning); 
+        }
 
+        public void ExecuteMainMenuChoice(MenuOptions choice, List<Book> bookList)
+        {
+            var searchResults = new List<Book>();
             switch (choice)
             {
                 case MenuOptions.DisplayAll:
+                    Console.Clear();
                     Menu.DisplayBookList(bookList);
-                    return; 
-                case MenuOptions.SearchByAuthor:
-                    searchResults = LibraryMember.MemberSearchByAuthor(bookList);
-                    return;
-                case MenuOptions.SearchByTitle:
-                    searchResults = LibraryMember.MemberSearchByTitle(bookList);
-                    Console.WriteLine("Select a book");
-                    int choice2 = Int32.Parse(Console.ReadLine());
-                    if (searchResults[choice2 - 1].IsCheckedOut)
-                    {
-                        Console.WriteLine($"Would you like to return {searchResults[choice2 - 1]}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Would you like to check this book out?");
-                    }
-                    return;
-                case MenuOptions.Quit:
+                    searchResults = bookList;
+                    LibraryMember.SelectFromList(searchResults, cart);
+                    appRunning = true;
                     return;
 
-                default:
-                    break;
+                case MenuOptions.SearchByAuthor:
+                    Console.Clear();
+                    searchResults = LibraryMember.MemberSearchByAuthor(bookList);
+                    LibraryMember.SelectFromList(searchResults, cart);
+                    appRunning = true;
+                    return;
+
+                case MenuOptions.SearchByTitle:
+                    Console.Clear();
+                    searchResults = LibraryMember.MemberSearchByTitle(bookList);
+                    LibraryMember.SelectFromList(searchResults, cart);
+                    appRunning = true;
+                    return;
+
+                case MenuOptions.GoToCart:
+                    Cart.BringUpCart(cart);
+                    appRunning = true;
+                    SaveLoad.Save(bookList);
+                    return;
+
+                case MenuOptions.Quit:
+                    appRunning = false;
+                    return;
+
+                default: return;
             }
 
-            
-          
-
-        }
-
+            }
     }
+
 }
