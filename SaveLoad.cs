@@ -76,18 +76,5 @@ namespace AHBC_2019_Midterm_JulyBC
 
         }
 
-        public static bool DoesBookListExist()
-        {
-            try
-            {
-                var reader = new StreamReader("./ThisShouldn'tExist.txt");
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
     }
 }
