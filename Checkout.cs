@@ -6,10 +6,14 @@ namespace AHBC_2019_Midterm_JulyBC
     public static class Checkout
     {
 
-        public static void CheckoutBook(Book book)
+        public static void CheckoutBook(List<Book> book)
         {
-            book.IsCheckedOut = true;
-            book.ReturnDate = DateTime.Now.AddDays(14);
+            foreach (var item in book)
+            {
+                item.IsCheckedOut = true;
+                item.ReturnDate = DateTime.Now.AddDays(14);
+            }
+           
         }
 
         public static void ReturnBook(Book book)
