@@ -25,7 +25,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
                 if (book.IsCheckedOut)
                 {
-                    bookStatus = $"Checked Out (Due: " + book.ReturnDate.ToString("0:MM/DD/yy") + ")";
+                    bookStatus = $"Checked Out (Due: " + book.ReturnDate.ToString("MM/dd/yy") + ")";
                 }
 
                 Console.WriteLine($"{i}. {book.Title} by {book.Author} | Status: {bookStatus}");
