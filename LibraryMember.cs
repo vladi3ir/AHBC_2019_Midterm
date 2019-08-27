@@ -7,14 +7,15 @@ namespace AHBC_2019_Midterm_JulyBC
     {
         public static MenuOptions GetMenuSelection()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
 
             #region INTRO
 
             Console.WriteLine(@"  ___  ____   __   __ _  ____     ___  __  ____   ___  _  _  ____    __    __  ____  ____   __   ____  _  _");
             Console.WriteLine(@" / __)(  _ \ / _\ (  ( \(    \   / __)(  )(  _ \ / __)/ )( \/ ___)  (  )  (  )(  _ \(  _ \ / _\ (  _ \( \/ )");
             Console.WriteLine(@"( (_ \ )   //    \/    / ) D (  ( (__  )(  )   /( (__ ) \/ (\___ \  / (_/\ )(  ) _ ( )   //    \ )   / )  / ");
-            Console.WriteLine(@" \___ /(__\_)\_/\_/\_)__)(____/   \___)(__)(__\_) \___)\____/(____/  \____/(__)(____/(__\_)\_/\_/(__\_)(__/  ");
-
+            Console.WriteLine(@" \___/(__\_)\_/\_/\_)__)(____/   \___)(__)(__\_) \___)\____/(____/  \____/(__)(____/(__\_)\_/\_/(__\_)(__/  ");
+            Console.WriteLine("");
 
             Console.WriteLine(@"                                ____________________________________________________");
             Console.WriteLine(@"                               |____________________________________________________|");
@@ -46,7 +47,8 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                               | ___\_/   /________//   ________         /  /||_|_|_|");
             Console.WriteLine(@"                               | ___ /   (|________/  |\_______\       /  /| |______|");
             Console.WriteLine(@"                                   /                  \|________)     /  / | |______|");
-
+            Console.WriteLine("");
+            Console.WriteLine("");
             #endregion
 
             Console.WriteLine("What would you like to do? Select a number from the following options:");
