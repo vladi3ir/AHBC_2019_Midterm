@@ -39,10 +39,9 @@ namespace AHBC_2019_Midterm_JulyBC
             //using (var reader = new StreamReader("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt"))
             {
                 var entireFile = reader.ReadToEnd();
-                var linesArray = entireFile.Split("\r\n");
+                var linesArray = entireFile.Split("\n");
+
                 List<Book> _BookList = new List<Book>();
-                
-                string line = reader.ReadLine();
                 
                 foreach (var _line in linesArray)
                 {
