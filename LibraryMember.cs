@@ -138,6 +138,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
                     if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
                     {
+						isValidInput = true;
                         Console.WriteLine("Select a book from the list above.");
                         var selectedBook = SelectBook(bookList);
                         bool validInput = false;
