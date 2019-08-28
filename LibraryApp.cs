@@ -7,15 +7,20 @@ namespace AHBC_2019_Midterm_JulyBC
 {
     public class LibraryApp
     {
-      
-        Search search = new Search();
-        List<Book> bookList = SaveLoad.Load();
-        List<Book> searchResults = new List<Book>();
-        List<Book> cart = new List<Book>();
-        bool appRunning = false;
+        public Search search { get; set; }
+        public List<Book> bookList { get; set; }
+        public List<Book> searchResults { get; set; }
+        public List<Book> cart { get; set; }
+        public bool appRunning { get; set; }     
 
         public void StartApp()
         {
+            search = new Search();
+            bookList = SaveLoad.Load();
+            searchResults = new List<Book>();
+            cart = new List<Book>();
+            appRunning = false;
+
             do
             {
                 MenuOptions choice = LibraryMember.GetMenuSelection();
@@ -51,6 +56,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     return;
 
                 case MenuOptions.GoToCart:
+                    Console.Clear();
                     Cart.BringUpCart(cart);
                     appRunning = true;
                     SaveLoad.Save(bookList);
@@ -58,12 +64,11 @@ namespace AHBC_2019_Midterm_JulyBC
 
                 case MenuOptions.Quit:
                     appRunning = false;
+                    SaveLoad.Save(bookList);
                     return;
 
                 default: return;
             }
-
-            }
+        }
     }
-
 }
