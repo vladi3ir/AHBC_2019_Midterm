@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-    class Search
+    public class Search
     {
         public List<Book> SearchByTitle(string userInput, List<Book> listOfBooks)
         {

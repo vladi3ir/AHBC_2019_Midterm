@@ -7,10 +7,10 @@ namespace AHBC_2019_Midterm_JulyBC
 {
     public static class SaveLoad
     {
-
         public static void Save(List<Book> bookList) 
         {
-            using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))  //  (file location, bool for overwrite[false] or append[true])
+            using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))
+            //using (var writer = new StreamWriter("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt", false))  
             {
                 foreach (var item in bookList)
                 {
@@ -27,26 +27,23 @@ namespace AHBC_2019_Midterm_JulyBC
         }
 
         public static List<Book> Load()  //Probably going to output a list of books
-        {
-            
-            try
+        {      
+            bool shouldGenerateList = !File.Exists("./LibrarySaveFile.txt");
+            //bool shouldGenerateList = !File.Exists("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt");
+            if (shouldGenerateList)
             {
-                bool shouldGenerateList = !File.Exists("/LibrarySaveFile.txt");
-                if (shouldGenerateList)
-                {
-                    DefaultBookList.PopulateDefaultBookList();
-                }
+                DefaultBookList.PopulateDefaultBookList();
+            }
 
-                using (var reader = new StreamReader("./LibrarySaveFile.txt"))
+            using (var reader = new StreamReader("./LibrarySaveFile.txt"))
+            //using (var reader = new StreamReader("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt"))
             {
                 var entireFile = reader.ReadToEnd();
                 var linesArray = entireFile.Split("\r\n");
                 List<Book> _BookList = new List<Book>();
                 
-
                 string line = reader.ReadLine();
-
-
+                
                 foreach (var _line in linesArray)
                 {
                     string[] bookInfo = _line.Split("//");
@@ -60,21 +57,9 @@ namespace AHBC_2019_Midterm_JulyBC
 
                         _BookList.Add(new Book(title, author, isCheckedOut, returnDate));
                     }
-
                 }
-
-
-                return _BookList;
-
+                return _BookList;  
             }
-            }
-            catch
-            {
-                return new List<Book>();
-            }
-            
-
         }
-
     }
 }
