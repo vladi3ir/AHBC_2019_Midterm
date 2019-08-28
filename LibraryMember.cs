@@ -129,52 +129,78 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             if (bookList.Any())
             {
-                Console.WriteLine("Select a book from the list above.");
-                var selectedBook = SelectBook(bookList);
-                bool validInput = false;
+                var isValidInput = false;
 
-                if (selectedBook.IsCheckedOut)
+                Console.WriteLine("Would you like to select a book (Y/N)?");
+                do
                 {
-                    Console.WriteLine("Would you like to return this book (Y/N)?");
-                    do
+                    var userChoice = Console.ReadLine();
+
+                    if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
                     {
-                        var userInput = Console.ReadLine();
-                        if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                        Console.WriteLine("Select a book from the list above.");
+                        var selectedBook = SelectBook(bookList);
+                        bool validInput = false;
+
+                        if (selectedBook.IsCheckedOut)
                         {
-                            validInput = true;
-                            Checkout.ReturnBook(selectedBook);
-                        }
-                        else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
-                        {
-                            validInput = true;
+                            Console.WriteLine("Would you like to return this book (Y/N)?");
+                            do
+                            {
+                                var userInput = Console.ReadLine();
+                                if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    validInput = true;
+                                    Checkout.ReturnBook(selectedBook);
+                                }
+                                else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    validInput = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("That is not a valid entry. Please try again:");
+                                }
+                            } while (!validInput);
                         }
                         else
                         {
-                            Console.WriteLine("That is not a valid entry. Please try again:");
+                            Console.WriteLine("Add book to cart (Y/N)?");
+                            do
+                            {
+                                var userInput = Console.ReadLine();
+                                if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    validInput = true;
+                                    if (!cart.Contains(selectedBook))
+                                    {
+                                        cart.Add(selectedBook);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("That book is already in the cart.");
+                                    }
+                                }
+                                else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    validInput = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("That is not a valid entry. Please try again:");
+                                }
+                            } while (!validInput);
                         }
-                    } while (!validInput);
-                }
-                else
-                {
-                    Console.WriteLine("Add book to cart (Y/N)?");
-                    do
+                    }
+                    else if (userChoice.Equals("N",StringComparison.OrdinalIgnoreCase))
                     {
-                        var userInput = Console.ReadLine();
-                        if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
-                        {
-                            validInput = true;
-                            cart.Add(selectedBook);
-                        }
-                        else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
-                        {
-                            validInput = true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("That is not a valid entry. Please try again:");
-                        }
-                    } while (!validInput);
-                }
+                        isValidInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not a a valid entry. Please try again:");
+                    }
+                } while (!isValidInput);
             }
         }
 
@@ -191,7 +217,7 @@ namespace AHBC_2019_Midterm_JulyBC
                 {
                     userInput = result;
 
-                    if (bookList.Count >= (userInput))
+                    if (bookList.Count >= userInput)
                     {
                         return bookList[userInput - 1];
                     }
