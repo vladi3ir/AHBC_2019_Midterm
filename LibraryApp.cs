@@ -17,6 +17,13 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
+          
+            for (int i = 1; i < 40; i++)
+            {
+                Console.SetWindowSize(110, i);
+                System.Threading.Thread.Sleep(10);
+            }
+
             search = new Search();
             bookList = SaveLoad.Load();
             searchResults = new List<Book>();
@@ -34,15 +41,15 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                          ____________________________________________________");
             Console.WriteLine(@"                         |____________________________________________________|");
             Console.WriteLine(@"                         | __     __   ____   ___ ||  ____    ____     _  __  |");
-            Console.WriteLine(@"                         ||  |__ |--|_| || |_|   |||_|**|*|__|+|+||___| ||  | |");
-            Console.WriteLine(@"                         ||==|^^||--| |=||=| |=*=||| |~~|~|  |=|=|| | |~||==| |");
-            Console.WriteLine(@"                         ||  |##||  | | || | |ED |||-|  | |==|+|+||-|-|~||__| |");
-            Console.WriteLine(@"                         ||__|__||__|_|_||_|_|___|||_|__|_|__|_|_||_|_|_||__|_|");
+            Console.WriteLine(@"                         ||  |__ |--|_| || |_|   |||_|**|*|__|+|V||___|N||  | |");
+            Console.WriteLine(@"                         ||==|^^||--| |=||=| |=*=||| |~~|~|  |=|L|| | |I||==| |");
+            Console.WriteLine(@"                         ||  |##||  | | || | |ED |||-|  | |==|+|A||-|-|C||__| |");
+            Console.WriteLine(@"                         ||__|__||__|_|_||_|_|___|||_|__|_|__|_|D||_|_|K||__|_|");
             Console.WriteLine(@"                         ||_______________________||__________________________|");
             Console.WriteLine(@"                         | _____________________  ||      __   __  _  __    _ |");
-            Console.WriteLine(@"                         ||=|=|=|=|=|=|=|=|=|=|=| __..\/ |  |_|  ||#||==|  / /|");
-            Console.WriteLine(@"                         || | | | | | | | | | | |/\ \  \\|++|=|  || ||==| / / |");
-            Console.WriteLine(@"                         ||_|_|_|_|_|_|_|_|_|_|_/_/\_.___\__|_|__||_||__|/_/__|");
+            Console.WriteLine(@"                         ||=|=|=|=|=====|=|=|=|=| __..\/ |  |_|  ||#||==|  / /|");
+            Console.WriteLine(@"                         || | | | |OLLIE| | | | |/\ \  \\|++|=|  || ||==| / / |");
+            Console.WriteLine(@"                         ||_|_|_|_|_____|_|_|_|_/_/\_.___\__|_|__||_||__|/_/__|");
             Console.WriteLine(@"                         |____________________ /\~()/()~//\ __________________|");
             Console.WriteLine(@"                         | __   __    _  _     \_  (_ .  _/ _      _     _____|");
             Console.WriteLine(@"                         ||~~|_|..|__| || |_ _   \ //\\ /  |=|_  /) |___| | | |");
@@ -51,8 +58,8 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         |_________________ _/    \/\/\/    \_ /   /__________|");
             Console.WriteLine(@"                         | _____   _   __  |/      \../      \/   /   __   ___|");
             Console.WriteLine(@"                         ||_____|_| |_|##|_||   |   \/ __\       /=|_|++|_|-|||");
-            Console.WriteLine(@"                         ||______||=|#|--| |\   \   o     \_____/  |~|  | | |||");
-            Console.WriteLine(@"                         ||______||_|_|__|_|_\   \  o     | |_|_|__|_|__|_|_|||");
+            Console.WriteLine(@"                         ||_____|_|=|#|--| |\   \   o     \_____/  |~|  | | |||");
+            Console.WriteLine(@"                         ||_____|_|_|_|__|_|_\   \  o     | |_|_|__|_|__|_|_|||");
             Console.WriteLine(@"                         |_________ __________\___\_______|____________ ______|");
             Console.WriteLine(@"                         |__    _  /    ________     ______           /| _ _ _|");
             Console.WriteLine(@"                         |\ \  |=|/   //    /| //   /  /  / |        / ||%|%|%|");
@@ -60,7 +67,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         |  \/\|/   /(____|/ //                    /  /||~|~|~|");
             Console.WriteLine(@"                         | ___\_/   /________//   ________         /  /||_|_|_|");
             Console.WriteLine(@"                         | ___ /   (|________/  |\_______\       /  /| |______|");
-            Console.WriteLine(@"                             /                  \|________)     /  / | |______|");
+            Console.WriteLine(@"                         |____/_________________\|________)_____/__/_|_|______|");
             Console.WriteLine("");
             Console.WriteLine("");
             #endregion
