@@ -65,7 +65,6 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
 
-
             do
             {
                 Console.Clear();
@@ -104,6 +103,13 @@ namespace AHBC_2019_Midterm_JulyBC
                 case MenuOptions.GoToCart:
                     Console.Clear();
                     Cart.BringUpCart(cart);
+                    appRunning = true;
+                    SaveLoad.Save(bookList);
+                    return;
+
+                case MenuOptions.ManageLibrary:
+                    Console.Clear();
+                    AddRemove.ManageLibrary(bookList);
                     appRunning = true;
                     SaveLoad.Save(bookList);
                     return;
