@@ -61,8 +61,10 @@ namespace AHBC_2019_Midterm_JulyBC
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("That is not a valid entry. Please press enter to try again.");
                         Console.ReadLine();
+                        Console.Clear();
                         validInput = false;
                     }
                 } while (!validInput);
