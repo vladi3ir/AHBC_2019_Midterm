@@ -35,7 +35,15 @@ namespace AHBC_2019_Midterm_JulyBC
                     case "6":
                         return MenuOptions.Quit;
                     default:
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
+<<<<<<< HEAD
+=======
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                         isValidOption = false;
                         break;
                 }
@@ -127,7 +135,16 @@ namespace AHBC_2019_Midterm_JulyBC
                                 }
                                 else
                                 {
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("That is not a valid entry. Please try again:");
+<<<<<<< HEAD
+=======
+                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.Green;
+
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                                 }
                             } while (!validInput);
                         }
@@ -158,7 +175,15 @@ namespace AHBC_2019_Midterm_JulyBC
                                 }
                                 else
                                 {
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("That is not a valid entry. Please try again:");
+<<<<<<< HEAD
+=======
+                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.Green;
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                                 }
                             } while (!validInput);
                         }
@@ -169,7 +194,16 @@ namespace AHBC_2019_Midterm_JulyBC
                     }
                     else
                     {
+<<<<<<< HEAD
                         Console.WriteLine("That is not a a valid entry. Please try again:");
+=======
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                     }
                 } while (!isValidInput);
             }
@@ -194,13 +228,29 @@ namespace AHBC_2019_Midterm_JulyBC
                     }
                     else
                     {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
+<<<<<<< HEAD
+=======
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                         validInput = false;
                     }
                 }
                 else
                 {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("That is not a valid entry. Please try again:");
+<<<<<<< HEAD
+=======
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+>>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                 }
             } while (!validInput);
 
