@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
@@ -10,17 +11,19 @@ namespace AHBC_2019_Midterm_JulyBC
         public List<Book> bookList { get; set; }
         public List<Book> searchResults { get; set; }
         public List<Book> cart { get; set; }
-        public bool appRunning { get; set; }
+        public bool appRunning { get; set; }     
 
         public void StartApp()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+          
             for (int i = 1; i < 40; i++)
             {
                 Console.SetWindowSize(110, i);
                 System.Threading.Thread.Sleep(10);
             }
 
-            Console.ForegroundColor = ConsoleColor.Green;
             search = new Search();
             bookList = SaveLoad.Load();
             searchResults = new List<Book>();
@@ -76,7 +79,7 @@ namespace AHBC_2019_Midterm_JulyBC
                 Console.Clear();
                 MenuOptions choice = LibraryMember.GetMenuSelection();
                 ExecuteMainMenuChoice(choice, bookList);
-            } while (appRunning);
+            } while (appRunning); 
         }
 
         public void ExecuteMainMenuChoice(MenuOptions choice, List<Book> bookList)
