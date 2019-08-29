@@ -28,10 +28,7 @@ namespace AHBC_2019_Midterm_JulyBC
             appRunning = false;
 
             #region INTRO
-            while ()
-            {
 
-            }
             Console.WriteLine(@"  ___  ____   __   __ _  ____     ___  __  ____   ___  _  _  ____    __    __  ____  ____   __   ____  _  _");
             Console.WriteLine(@" / __)(  _ \ / _\ (  ( \(    \   / __)(  )(  _ \ / __)/ )( \/ ___)  (  )  (  )(  _ \(  _ \ / _\ (  _ \( \/ )");
             Console.WriteLine(@"( (_ \ )   //    \/    / ) D (  ( (__  )(  )   /( (__ ) \/ (\___ \  / (_/\ )(  ) _ ( )   //    \ )   / )  / ");
@@ -67,7 +64,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         |  \/\|/   /(____|/ //                    /  /||~|~|~|");
             Console.WriteLine(@"                         | ___\_/   /________//   ________         /  /||_|_|_|");
             Console.WriteLine(@"                         | ___ /   (|_VLAD___/  |\_______\       /  /| |______|");
-            Console.WriteLine(@"                             /                  \|________)     /  / | |______|");
+            Console.WriteLine(@"                         |____/_________________\|________)_____/__/_|_|______|");
             Console.WriteLine("");
             Console.WriteLine("");
             #endregion
