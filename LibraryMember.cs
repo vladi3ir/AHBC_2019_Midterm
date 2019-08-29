@@ -8,8 +8,6 @@ namespace AHBC_2019_Midterm_JulyBC
     {
         public static MenuOptions GetMenuSelection()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-
             Console.WriteLine("What would you like to do? Select a number from the following options:");
             Menu.DisplayMenuOptions();
             bool isValidOption;
@@ -56,10 +54,12 @@ namespace AHBC_2019_Midterm_JulyBC
             }
             else
             {
+
+                Console.Clear();
                 Console.WriteLine("Search results:");
                 Menu.DisplayBookList(searchResults);
             }
-
+            
             return searchResults;
         }
 
@@ -76,6 +76,8 @@ namespace AHBC_2019_Midterm_JulyBC
             }
             else
             {
+
+                Console.Clear();
                 Console.WriteLine("Search results:");
                 Menu.DisplayBookList(searchResults);
             }
@@ -111,7 +113,7 @@ namespace AHBC_2019_Midterm_JulyBC
                                 {
                                     validInput = true;
                                     Checkout.ReturnBook(selectedBook);
-                                    Console.WriteLine($"You've returned {selectedBook.Title}. Press any key to continue.");
+                                    Console.WriteLine($"You've returned {selectedBook.Title}. Press enter to continue.");
                                     Console.ReadLine();
                                 }
                                 else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
@@ -136,7 +138,7 @@ namespace AHBC_2019_Midterm_JulyBC
                                     if (!cart.Contains(selectedBook))
                                     {
                                         cart.Add(selectedBook);
-                                        Console.WriteLine($"You've added {selectedBook.Title} to the cart. Press any key to continue.");
+                                        Console.WriteLine($"You've added {selectedBook.Title} to the cart. Press enter to continue.");
                                         Console.ReadLine();
                                     }
                                     else
