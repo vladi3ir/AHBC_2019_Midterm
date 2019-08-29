@@ -13,6 +13,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("3. Search by title");
             Console.WriteLine("4. Go to cart");
             Console.WriteLine("5. Quit");
+            Console.WriteLine();
         }
 
         public static void DisplayBookList(List<Book> bookList)
@@ -29,6 +30,7 @@ namespace AHBC_2019_Midterm_JulyBC
                 }
 
                 Console.WriteLine($"{i}. {book.Title} by {book.Author} | Status: {bookStatus}");
+                Console.WriteLine();
                 i++;
             }
         }

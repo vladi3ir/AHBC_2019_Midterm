@@ -13,19 +13,11 @@ namespace AHBC_2019_Midterm_JulyBC
                 item.IsCheckedOut = true;
                 item.ReturnDate = DateTime.Now.AddDays(14);
             }
-           
         }
 
         public static void ReturnBook(Book book)
         {
             book.IsCheckedOut = false;
         }
-
-        public static List<Book> EmptyCart(List<Book> cart)
-        {
-            List<Book> emptyCart = new List<Book>();
-            return emptyCart;
-        }
     }
-
 }

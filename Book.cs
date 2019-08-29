@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
-   public class Book
+    public class Book
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -24,6 +24,5 @@ namespace AHBC_2019_Midterm_JulyBC
             Author = author;
             IsCheckedOut = status;
         }
-
     }
 }
