@@ -35,8 +35,11 @@ namespace AHBC_2019_Midterm_JulyBC
                     case "6":
                         return MenuOptions.Quit;
                     default:
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
 
                         isValidOption = false;
                         break;
@@ -129,8 +132,13 @@ namespace AHBC_2019_Midterm_JulyBC
                                 }
                                 else
                                 {
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("That is not a valid entry. Please try again:");
-                                    Console.Beep(1320, 500);
+                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.Green;
+
+
                                 }
                             } while (!validInput);
                         }
@@ -161,8 +169,11 @@ namespace AHBC_2019_Midterm_JulyBC
                                 }
                                 else
                                 {
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("That is not a valid entry. Please try again:");
-                                    Console.Beep(1320, 500);
+                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.Green;
 
                                 }
                             } while (!validInput);
@@ -174,8 +185,11 @@ namespace AHBC_2019_Midterm_JulyBC
                     }
                     else
                     {
-                        Console.WriteLine("That is not a a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
 
                     }
                 } while (!isValidInput);
@@ -201,16 +215,22 @@ namespace AHBC_2019_Midterm_JulyBC
                     }
                     else
                     {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Green;
 
                         validInput = false;
                     }
                 }
                 else
                 {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("That is not a valid entry. Please try again:");
-                    Console.Beep(1320, 500);
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Green;
 
                 }
             } while (!validInput);
