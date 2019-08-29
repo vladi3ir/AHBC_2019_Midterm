@@ -12,20 +12,25 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add book to library");
             Console.WriteLine("2. Remove book from library");
+            Console.WriteLine("3. Go back to main menu");
 
             bool isValidInput = false;
             do
             {
                 string userInput = Console.ReadLine();
-                if ((userInput.Equals("1", StringComparison.OrdinalIgnoreCase)))
+                if ((userInput.Equals("1")))
                 {
                     AddBook(books);
                     isValidInput = true;
 
                 }
-                else if ((userInput.Equals("2", StringComparison.OrdinalIgnoreCase)))
+                else if ((userInput.Equals("2")))
                 {
                     RemoveBook(books);
+                    isValidInput = true;
+                }
+                else if ((userInput.Equals("3")))
+                {
                     isValidInput = true;
                 }
                 else
