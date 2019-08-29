@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
@@ -10,7 +11,7 @@ namespace AHBC_2019_Midterm_JulyBC
         public List<Book> bookList { get; set; }
         public List<Book> searchResults { get; set; }
         public List<Book> cart { get; set; }
-        public bool appRunning { get; set; }
+        public bool appRunning { get; set; }     
 
         public void StartApp()
         {
@@ -65,13 +66,12 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
 
-
             do
             {
                 Console.Clear();
                 MenuOptions choice = LibraryMember.GetMenuSelection();
                 ExecuteMainMenuChoice(choice, bookList);
-            } while (appRunning);
+            } while (appRunning); 
         }
 
         public void ExecuteMainMenuChoice(MenuOptions choice, List<Book> bookList)
