@@ -56,12 +56,14 @@ namespace AHBC_2019_Midterm_JulyBC
                 if (title == "")
                 {
                     Console.WriteLine("Please enter something for title.");
+                    Console.Write("Book title: ");
                 }
                 if (title.Contains("//"))
                 {
                     Console.WriteLine("I'm sorry, but the title can not contain '//'.");
+                    Console.Write("Book title: ");
                 }
-            } while (title == "" && !title.Contains("//"));
+            } while (title == "" || title.Contains("//"));
 
             Console.Write("Author: ");
             do
@@ -70,13 +72,15 @@ namespace AHBC_2019_Midterm_JulyBC
                 if (author == "")
                 {
                     Console.WriteLine("Please enter something for author.");
+                    Console.Write("Author: ");
                 }
                 if (author.Contains("//"))
                 {
                     Console.WriteLine("I'm sorry, but the author can not contain '//'.");
+                    Console.Write("Author: ");
                 }
 
-            } while (author == "" && !title.Contains("//"));
+            } while (author == "" || author.Contains("//"));
 
             Book book = new Book(title, author, false);
             books.Add(book);
