@@ -14,6 +14,12 @@ namespace AHBC_2019_Midterm_JulyBC
 
         public void StartApp()
         {
+            for (int i = 1; i < 40; i++)
+            {
+                Console.SetWindowSize(110, i);
+                System.Threading.Thread.Sleep(10);
+            }
+
             Console.ForegroundColor = ConsoleColor.Green;
             search = new Search();
             bookList = SaveLoad.Load();
