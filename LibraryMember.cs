@@ -33,8 +33,6 @@ namespace AHBC_2019_Midterm_JulyBC
                         return MenuOptions.Quit;
                     default:
                         Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
-
                         isValidOption = false;
                         break;
                 }
@@ -62,7 +60,7 @@ namespace AHBC_2019_Midterm_JulyBC
                 Console.WriteLine("Search results:");
                 Menu.DisplayBookList(searchResults);
             }
-
+            
             return searchResults;
         }
 
@@ -102,7 +100,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
                     if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
                     {
-                        isValidInput = true;
+						isValidInput = true;
                         Console.WriteLine("Select a book by number from the list above.");
                         var selectedBook = SelectBook(bookList);
                         bool validInput = false;
@@ -127,7 +125,6 @@ namespace AHBC_2019_Midterm_JulyBC
                                 else
                                 {
                                     Console.WriteLine("That is not a valid entry. Please try again:");
-                                    Console.Beep(1320, 500);
                                 }
                             } while (!validInput);
                         }
@@ -159,21 +156,17 @@ namespace AHBC_2019_Midterm_JulyBC
                                 else
                                 {
                                     Console.WriteLine("That is not a valid entry. Please try again:");
-                                    Console.Beep(1320, 500);
-
                                 }
                             } while (!validInput);
                         }
                     }
-                    else if (userChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
+                    else if (userChoice.Equals("N",StringComparison.OrdinalIgnoreCase))
                     {
                         isValidInput = true;
                     }
                     else
                     {
                         Console.WriteLine("That is not a a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
-
                     }
                 } while (!isValidInput);
             }
@@ -199,16 +192,12 @@ namespace AHBC_2019_Midterm_JulyBC
                     else
                     {
                         Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.Beep(1320, 500);
-
                         validInput = false;
                     }
                 }
                 else
                 {
                     Console.WriteLine("That is not a valid entry. Please try again:");
-                    Console.Beep(1320, 500);
-
                 }
             } while (!validInput);
 
