@@ -63,7 +63,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         | \/\ |*/  .//____// //   /__/__/ (_)      /  ||=|=|=|");
             Console.WriteLine(@"                         |  \/\|/   /(____|/ //                    /  /||~|~|~|");
             Console.WriteLine(@"                         | ___\_/   /________//   ________         /  /||_|_|_|");
-            Console.WriteLine(@"                         | ___ /   (|_VLAD___/  |\_______\       /  /| |______|");
+            Console.WriteLine(@"                         | ___ /   (|________/  |\_______\       /  /| |______|");
             Console.WriteLine(@"                         |____/_________________\|________)_____/__/_|_|______|");
             Console.WriteLine("");
             Console.WriteLine("");
