@@ -16,7 +16,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@" ~    |____.");
             Console.WriteLine(@"______o____o___");
 
-            Console.WriteLine($"\r\nHere is your whats in your cart:");
+            Console.WriteLine($"\r\nHere is your what's in your cart:");
             Menu.DisplayBookList(cart);
 
 
@@ -31,7 +31,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
                 do
                 {
-                    Console.WriteLine("would you like to: \r\n 1. Checkout \r\n 2. Empty Cart \r\n 3. Go Back");
+                    Console.WriteLine("Would you like to: \r\n 1. Checkout \r\n 2. Empty Cart \r\n 3. Go Back");
                     string cartChoice = Console.ReadLine().ToLower();
 
                     if (cartChoice == "1" || cartChoice == "one")
@@ -49,7 +49,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     else if (cartChoice == "2" || cartChoice == "two")
                     {
                         Console.Clear();
-                        Console.WriteLine("You cart have been cleared. Press enter to continue.");
+                        Console.WriteLine("The cart has been cleared. Press enter to continue.");
                         Console.ReadLine();
                         cart.Clear();
                         validInput = true;
