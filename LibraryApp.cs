@@ -65,10 +65,10 @@ namespace AHBC_2019_Midterm_JulyBC
             #endregion
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
-            Console.Clear();
 
             do
             {
+                Console.Clear();
                 MenuOptions choice = LibraryMember.GetMenuSelection();
                 ExecuteMainMenuChoice(choice, bookList);
             } while (appRunning); 
@@ -76,7 +76,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
         public void ExecuteMainMenuChoice(MenuOptions choice, List<Book> bookList)
         {
-            var searchResults = new List<Book>();
+            searchResults = new List<Book>();
             switch (choice)
             {
                 case MenuOptions.DisplayAll:
