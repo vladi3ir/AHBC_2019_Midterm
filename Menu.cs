@@ -30,9 +30,10 @@ namespace AHBC_2019_Midterm_JulyBC
                 }
 
                 Console.WriteLine($"{i}. {book.Title} by {book.Author} | Status: {bookStatus}");
-                Console.WriteLine();
                 i++;
             }
+
+            Console.WriteLine();
         }
     }
 }
