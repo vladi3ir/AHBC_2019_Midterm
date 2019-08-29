@@ -108,6 +108,13 @@ namespace AHBC_2019_Midterm_JulyBC
                     SaveLoad.Save(bookList);
                     return;
 
+                case MenuOptions.ManageLibrary:
+                    Console.Clear();
+                    AddRemove.ManageLibrary(bookList);
+                    appRunning = true;
+                    SaveLoad.Save(bookList);
+                    return;
+
                 case MenuOptions.Quit:
                     appRunning = false;
                     SaveLoad.Save(bookList);

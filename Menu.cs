@@ -12,7 +12,8 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("2. Search by author");
             Console.WriteLine("3. Search by title");
             Console.WriteLine("4. Go to cart");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Manage Library");
+            Console.WriteLine("6. Quit");
             Console.WriteLine();
         }
 
