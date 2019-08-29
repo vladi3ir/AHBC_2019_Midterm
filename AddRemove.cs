@@ -91,7 +91,43 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("1. Display all books");
             Console.WriteLine("2. Search by author");
             Console.WriteLine("3. Search by title");
-            Book selectedBook = RemoveBookOptions(books);
+            //Book selectedBook = SelectRenameSearchOption(books);
+            Book selectedBook = new Book ("title", "author", false);
+            bool isValidRenameOption = false;
+
+            do
+            {
+                switch (Console.ReadLine().ToLower())
+                {
+                    case "one":
+                    case "1":
+                        Console.Clear();
+                        Console.WriteLine("Select a book to remove.");
+                        Menu.DisplayBookList(books);
+                        selectedBook = LibraryMember.SelectBook(books);
+                        isValidRenameOption = true;
+                        break;
+                    case "two":
+                    case "2":
+                        Console.Clear();
+                        Console.WriteLine("Select a book to remove.");
+                        selectedBook = LibraryMember.SelectBook(LibraryMember.MemberSearchByAuthor(books));
+                        isValidRenameOption = true;
+                        break;
+                    case "three":
+                    case "3":
+                        Console.Clear();
+                        Console.WriteLine("Select a book to remove.");
+                        selectedBook = LibraryMember.SelectBook(LibraryMember.MemberSearchByTitle(books));
+                        isValidRenameOption = true;
+                        break;
+                    default:
+                        Console.WriteLine("That is not a valid entry. Please try again:");
+                        isValidRenameOption = false;
+                        break;
+                }
+            } while (!isValidRenameOption);
+
 
             Console.WriteLine($"Are you sure you want to remove {selectedBook.Title} from the library? [Y/N]");
             bool validInput = false;
@@ -100,8 +136,8 @@ namespace AHBC_2019_Midterm_JulyBC
                 string userInput = Console.ReadLine();
                 if ((userInput.Equals("Y", StringComparison.OrdinalIgnoreCase)))
                 {
-                    books.Remove(selectedBook);
-                  
+                   books.Remove(selectedBook);
+                    validInput = true;
                 }
                 else if ((userInput.Equals("N", StringComparison.OrdinalIgnoreCase)))
                 {    
@@ -114,14 +150,14 @@ namespace AHBC_2019_Midterm_JulyBC
                 }
             } while(!validInput);
 
-            Console.WriteLine($"You've removed {selectedBook} from the library.");
+            Console.WriteLine($"You've removed {selectedBook.Title} from the library.");
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
         }
 
-        private static Book RemoveBookOptions(List<Book> books)
+        private static Book SelectRenameSearchOption(List<Book> books)
         {
-            bool isValidOption = true;
+            bool isValidRenameOption = true;
 
             do
             {
@@ -141,12 +177,14 @@ namespace AHBC_2019_Midterm_JulyBC
                         
                     default:
                         Console.WriteLine("That is not a valid entry. Please try again:");
-                        isValidOption = false;
-                        break;
-                }
-                return new Book("title", "author", false);
+                        isValidRenameOption = false;
+                        return new Book("title", "author", false);
 
-            } while (!isValidOption);
+                }
+               
+
+            } while (!isValidRenameOption);
+            
         }
     }
 }
