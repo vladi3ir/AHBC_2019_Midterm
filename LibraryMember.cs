@@ -50,7 +50,8 @@ namespace AHBC_2019_Midterm_JulyBC
 
             if (searchResults.Count == 0)
             {
-                Console.WriteLine("No results found.");
+                Console.WriteLine("No results found. Press enter to continue.");
+                Console.ReadLine();
             }
             else
             {
@@ -72,7 +73,8 @@ namespace AHBC_2019_Midterm_JulyBC
 
             if (searchResults.Count == 0)
             {
-                Console.WriteLine("No results found.");
+                Console.WriteLine("No results found. Press enter to continue.");
+                Console.ReadLine();
             }
             else
             {
@@ -143,7 +145,8 @@ namespace AHBC_2019_Midterm_JulyBC
                                     }
                                     else
                                     {
-                                        Console.WriteLine("That book is already in the cart.");
+                                        Console.WriteLine("That book is already in the cart. Press enter to continue.");
+                                        Console.ReadLine();
                                     }
                                 }
                                 else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
