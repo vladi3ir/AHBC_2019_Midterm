@@ -38,12 +38,8 @@ namespace AHBC_2019_Midterm_JulyBC
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
-<<<<<<< HEAD
-=======
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.Green;
-
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                         isValidOption = false;
                         break;
                 }
@@ -103,109 +99,126 @@ namespace AHBC_2019_Midterm_JulyBC
             if (bookList.Any())
             {
                 var isValidInput = false;
+                var selectAgain = false;
+                string userChoice;
 
                 Console.WriteLine("Would you like to select a book (Y/N)?");
+                userChoice = Console.ReadLine();
                 do
                 {
-                    var userChoice = Console.ReadLine();
-
-                    if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                    do
                     {
-						isValidInput = true;
-                        Console.WriteLine("Select a book by number from the list above.");
-                        var selectedBook = SelectBook(bookList);
-                        bool validInput = false;
-
-                        if (selectedBook.IsCheckedOut)
+                        if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
                         {
-                            Console.WriteLine("Would you like to return this book (Y/N)?");
-                            do
-                            {
-                                var userInput = Console.ReadLine();
-                                if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    validInput = true;
-                                    Checkout.ReturnBook(selectedBook);
-                                    Console.WriteLine($"You've returned {selectedBook.Title}. Press enter to continue.");
-                                    Console.ReadLine();
-                                }
-                                else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    validInput = true;
-                                }
-                                else
-                                {
-                                    Console.BackgroundColor = ConsoleColor.Red;
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.WriteLine("That is not a valid entry. Please try again:");
-<<<<<<< HEAD
-=======
-                                    Console.BackgroundColor = ConsoleColor.Black;
-                                    Console.ForegroundColor = ConsoleColor.Green;
+                            isValidInput = true;
+                            Console.WriteLine("Select a book by number from the list above.");
+                            var selectedBook = SelectBook(bookList);
+                            bool validInput = false;
 
-
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
-                                }
-                            } while (!validInput);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Add book to cart (Y/N)?");
-                            do
+                            if (selectedBook.IsCheckedOut)
                             {
-                                var userInput = Console.ReadLine();
-                                if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                                Console.WriteLine("Would you like to return this book (Y/N)?");
+                                do
                                 {
-                                    validInput = true;
-                                    if (!cart.Contains(selectedBook))
+                                    var userInput = Console.ReadLine();
+                                    if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
                                     {
-                                        cart.Add(selectedBook);
-                                        Console.WriteLine($"You've added {selectedBook.Title} to the cart. Press enter to continue.");
+                                        validInput = true;
+                                        Checkout.ReturnBook(selectedBook);
+                                        Console.WriteLine($"You've returned {selectedBook.Title}. Press enter to continue.");
                                         Console.ReadLine();
+                                    }
+                                    else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        validInput = true;
                                     }
                                     else
                                     {
-                                        Console.WriteLine("That book is already in the cart. Press enter to continue.");
-                                        Console.ReadLine();
+                                        Console.BackgroundColor = ConsoleColor.Red;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("That is not a valid entry. Please try again:");
+                                        Console.BackgroundColor = ConsoleColor.Black;
+                                        Console.ForegroundColor = ConsoleColor.Green;
                                     }
-                                }
-                                else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                                } while (!validInput);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Add book to cart (Y/N)?");
+                                do
                                 {
-                                    validInput = true;
-                                }
-                                else
-                                {
-                                    Console.BackgroundColor = ConsoleColor.Red;
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.WriteLine("That is not a valid entry. Please try again:");
-<<<<<<< HEAD
-=======
-                                    Console.BackgroundColor = ConsoleColor.Black;
-                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    var userInput = Console.ReadLine();
+                                    if (userInput.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        validInput = true;
+                                        if (!cart.Contains(selectedBook))
+                                        {
+                                            cart.Add(selectedBook);
+                                            Console.WriteLine($"You've added {selectedBook.Title} to the cart. Press enter to continue.");
+                                            Console.ReadLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("That book is already in the cart. Press enter to continue.");
+                                            Console.ReadLine();
+                                        }
+                                    }
+                                    else if (userInput.Equals("N", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        validInput = true;
+                                    }
+                                    else
+                                    {
+                                        Console.BackgroundColor = ConsoleColor.Red;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("That is not a valid entry. Please try again:");
+                                        Console.BackgroundColor = ConsoleColor.Black;
+                                        Console.ForegroundColor = ConsoleColor.Green;
 
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
-                                }
-                            } while (!validInput);
+                                    }
+                                } while (!validInput);
+                            }
                         }
-                    }
-                    else if (userChoice.Equals("N",StringComparison.OrdinalIgnoreCase))
-                    {
-                        isValidInput = true;
-                    }
-                    else
-                    {
-<<<<<<< HEAD
-                        Console.WriteLine("That is not a a valid entry. Please try again:");
-=======
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                        Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.Green;
+                        else if (userChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
+                        {
+                            isValidInput = true;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.WriteLine("That is not a valid entry. Please try again:");
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                    } while (!isValidInput);
 
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
-                    }
-                } while (!isValidInput);
+                    Console.WriteLine("Would you like to select another book from the list (Y/N)?");
+                    bool isValid;
+                    do
+                    {
+                        userChoice = Console.ReadLine();
+                        if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                        {
+                            isValid = true;
+                            selectAgain = true;
+                        }
+                        else if (userChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
+                        {
+                            isValid = true;
+                            selectAgain = false;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.WriteLine("That is not a valid entry. Please try again:");
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            isValid = false;
+                        }
+                    } while (!isValid);   
+                } while (selectAgain);
             }
         }
 
@@ -231,12 +244,9 @@ namespace AHBC_2019_Midterm_JulyBC
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("That is not a valid entry. Please try again:");
-<<<<<<< HEAD
-=======
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.Green;
 
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                         validInput = false;
                     }
                 }
@@ -245,12 +255,8 @@ namespace AHBC_2019_Midterm_JulyBC
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("That is not a valid entry. Please try again:");
-<<<<<<< HEAD
-=======
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Green;
-
->>>>>>> a994fb9edd86a36bfeac5b5524d9f6cbccb7fd97
                 }
             } while (!validInput);
 

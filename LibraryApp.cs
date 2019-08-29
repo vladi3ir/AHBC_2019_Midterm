@@ -15,6 +15,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
         public void StartApp()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
             search = new Search();
             bookList = SaveLoad.Load();
