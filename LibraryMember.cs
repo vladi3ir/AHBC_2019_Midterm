@@ -98,16 +98,20 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             if (bookList.Any())
             {
-                var isValidInput = false;
                 var selectAgain = false;
-                string userChoice;
+                string userChoice = "";
 
                 Console.WriteLine("Would you like to select a book (Y/N)?");
-                userChoice = Console.ReadLine();
                 do
                 {
+                    bool isValidInput;
+
                     do
                     {
+                        if (selectAgain == false)
+                        {
+                            userChoice = Console.ReadLine();
+                        }
                         if (userChoice.Equals("Y", StringComparison.OrdinalIgnoreCase))
                         {
                             isValidInput = true;
@@ -139,6 +143,7 @@ namespace AHBC_2019_Midterm_JulyBC
                                         Console.WriteLine("That is not a valid entry. Please try again:");
                                         Console.BackgroundColor = ConsoleColor.Black;
                                         Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine();
                                     }
                                 } while (!validInput);
                             }
@@ -174,6 +179,7 @@ namespace AHBC_2019_Midterm_JulyBC
                                         Console.WriteLine("That is not a valid entry. Please try again:");
                                         Console.BackgroundColor = ConsoleColor.Black;
                                         Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine();
 
                                     }
                                 } while (!validInput);
@@ -190,6 +196,9 @@ namespace AHBC_2019_Midterm_JulyBC
                             Console.WriteLine("That is not a valid entry. Please try again:");
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine();
+
+                            isValidInput = false;
                         }
                     } while (!isValidInput);
 
@@ -215,6 +224,7 @@ namespace AHBC_2019_Midterm_JulyBC
                             Console.WriteLine("That is not a valid entry. Please try again:");
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine();
                             isValid = false;
                         }
                     } while (!isValid);   
@@ -245,7 +255,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     Console.WriteLine("That is not a valid entry. Please try again:");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Green;
-
+                    Console.WriteLine();
                     validInput = false;
                 }
                 else
@@ -255,6 +265,7 @@ namespace AHBC_2019_Midterm_JulyBC
                     Console.WriteLine("That is not a valid entry. Please try again:");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine();
                 }
             } while (!validInput);
 
