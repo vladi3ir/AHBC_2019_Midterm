@@ -17,12 +17,17 @@ namespace AHBC_2019_Midterm_JulyBC
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
-          
-            for (int i = 1; i < 40; i++)
+
+            try
             {
-                Console.SetWindowSize(110, i);
-                System.Threading.Thread.Sleep(10);
+                for (int i = 1; i < 40; i++)
+                {
+                    Console.SetWindowSize(110, i);
+                    System.Threading.Thread.Sleep(10);
+                }
             }
+            catch { }
+
 
             search = new Search();
             bookList = SaveLoad.Load();
