@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace AHBC_2019_Midterm_JulyBC
 {
@@ -27,7 +25,6 @@ namespace AHBC_2019_Midterm_JulyBC
                 }
             }
             catch { }
-
 
             search = new Search();
             bookList = SaveLoad.Load();
@@ -77,6 +74,7 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine("");
             Console.WriteLine("");
             #endregion
+
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
 

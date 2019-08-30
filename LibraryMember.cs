@@ -181,7 +181,6 @@ namespace AHBC_2019_Midterm_JulyBC
                         }
                         else if (userChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
                         {
-                            isValidInput = true;
                             return;
                         }
                         else
