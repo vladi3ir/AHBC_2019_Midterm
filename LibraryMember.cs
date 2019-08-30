@@ -182,6 +182,7 @@ namespace AHBC_2019_Midterm_JulyBC
                         else if (userChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
                         {
                             isValidInput = true;
+                            return;
                         }
                         else
                         {
@@ -239,16 +240,14 @@ namespace AHBC_2019_Midterm_JulyBC
                     {
                         return bookList[userInput - 1];
                     }
-                    else
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                        Console.WriteLine("That is not a valid entry. Please try again:");
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.Green;
 
-                        validInput = false;
-                    }
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("That is not a valid entry. Please try again:");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+                    validInput = false;
                 }
                 else
                 {
