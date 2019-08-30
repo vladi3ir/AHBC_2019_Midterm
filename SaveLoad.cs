@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Linq;
 
@@ -11,13 +10,12 @@ namespace AHBC_2019_Midterm_JulyBC
         public static void Save(List<Book> bookList) 
         {
             using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))
-            //using (var writer = new StreamWriter("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt", false))  
             {
                 IEnumerable<Book> orderedList = bookList.OrderBy(Book => Book.Title).ToList();
                 foreach (var item in orderedList)
                 {
-                    string title = item.Title.ToString();
-                    string author = item.Author.ToString();
+                    string title = item.Title;
+                    string author = item.Author;
                     string status = item.IsCheckedOut.ToString();
                     string returnDate = item.ReturnDate.ToString();
 
@@ -28,17 +26,15 @@ namespace AHBC_2019_Midterm_JulyBC
             }
         }
 
-        public static List<Book> Load()  //Probably going to output a list of books
+        public static List<Book> Load()
         {      
             bool shouldGenerateList = !File.Exists("./LibrarySaveFile.txt");
-            //bool shouldGenerateList = !File.Exists("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt");
             if (shouldGenerateList)
             {
                 DefaultBookList.PopulateDefaultBookList();
             }
 
             using (var reader = new StreamReader("./LibrarySaveFile.txt"))
-            //using (var reader = new StreamReader("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt"))
             {
                 var entireFile = reader.ReadToEnd();
                 var linesArray = entireFile.Split("\n");
