@@ -31,6 +31,7 @@ namespace AHBC_2019_Midterm_JulyBC
 
             search = new Search();
             bookList = SaveLoad.Load();
+            SaveLoad.Save(bookList);
             searchResults = new List<Book>();
             cart = new List<Book>();
             appRunning = false;
@@ -82,6 +83,8 @@ namespace AHBC_2019_Midterm_JulyBC
             do
             {
                 Console.Clear();
+                SaveLoad.Save(bookList);
+                bookList = SaveLoad.Load();
                 MenuOptions choice = LibraryMember.GetMenuSelection();
                 ExecuteMainMenuChoice(choice, bookList);
             } while (appRunning); 
