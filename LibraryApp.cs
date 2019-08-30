@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace AHBC_2019_Midterm_JulyBC
 {
     public class LibraryApp
@@ -10,13 +9,26 @@ namespace AHBC_2019_Midterm_JulyBC
         public List<Book> bookList { get; set; }
         public List<Book> searchResults { get; set; }
         public List<Book> cart { get; set; }
-        public bool appRunning { get; set; }
+        public bool appRunning { get; set; }     
 
         public void StartApp()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
+
+            try
+            {
+                for (int i = 1; i < 40; i++)
+                {
+                    Console.SetWindowSize(110, i);
+                    System.Threading.Thread.Sleep(10);
+                }
+            }
+            catch { }
+
             search = new Search();
             bookList = SaveLoad.Load();
+            SaveLoad.Save(bookList);
             searchResults = new List<Book>();
             cart = new List<Book>();
             appRunning = false;
@@ -32,15 +44,15 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                          ____________________________________________________");
             Console.WriteLine(@"                         |____________________________________________________|");
             Console.WriteLine(@"                         | __     __   ____   ___ ||  ____    ____     _  __  |");
-            Console.WriteLine(@"                         ||  |__ |--|_| || |_|   |||_|**|*|__|+|+||___| ||  | |");
-            Console.WriteLine(@"                         ||==|^^||--| |=||=| |=*=||| |~~|~|  |=|=|| | |~||==| |");
-            Console.WriteLine(@"                         ||  |##||  | | || | |ED |||-|  | |==|+|+||-|-|~||__| |");
-            Console.WriteLine(@"                         ||__|__||__|_|_||_|_|___|||_|__|_|__|_|_||_|_|_||__|_|");
+            Console.WriteLine(@"                         ||  |__ |--|_| || |_|   |||_|**|*|__|+|V||___|N||  | |");
+            Console.WriteLine(@"                         ||==|^^||--| |=||=| |=*=||| |~~|~|  |=|L|| | |I||==| |");
+            Console.WriteLine(@"                         ||  |##||  | | || | |ED |||-|  | |==|+|A||-|-|C||__| |");
+            Console.WriteLine(@"                         ||__|__||__|_|_||_|_|___|||_|__|_|__|_|D||_|_|K||__|_|");
             Console.WriteLine(@"                         ||_______________________||__________________________|");
             Console.WriteLine(@"                         | _____________________  ||      __   __  _  __    _ |");
-            Console.WriteLine(@"                         ||=|=|=|=|=|=|=|=|=|=|=| __..\/ |  |_|  ||#||==|  / /|");
-            Console.WriteLine(@"                         || | | | | | | | | | | |/\ \  \\|++|=|  || ||==| / / |");
-            Console.WriteLine(@"                         ||_|_|_|_|_|_|_|_|_|_|_/_/\_.___\__|_|__||_||__|/_/__|");
+            Console.WriteLine(@"                         ||=|=|=|=|=====|=|=|=|=| __..\/ |  |_|  ||#||==|  / /|");
+            Console.WriteLine(@"                         || | | | |OLLIE| | | | |/\ \  \\|++|=|  || ||==| / / |");
+            Console.WriteLine(@"                         ||_|_|_|_|_____|_|_|_|_/_/\_.___\__|_|__||_||__|/_/__|");
             Console.WriteLine(@"                         |____________________ /\~()/()~//\ __________________|");
             Console.WriteLine(@"                         | __   __    _  _     \_  (_ .  _/ _      _     _____|");
             Console.WriteLine(@"                         ||~~|_|..|__| || |_ _   \ //\\ /  |=|_  /) |___| | | |");
@@ -49,8 +61,8 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         |_________________ _/    \/\/\/    \_ /   /__________|");
             Console.WriteLine(@"                         | _____   _   __  |/      \../      \/   /   __   ___|");
             Console.WriteLine(@"                         ||_____|_| |_|##|_||   |   \/ __\       /=|_|++|_|-|||");
-            Console.WriteLine(@"                         ||______||=|#|--| |\   \   o     \_____/  |~|  | | |||");
-            Console.WriteLine(@"                         ||______||_|_|__|_|_\   \  o     | |_|_|__|_|__|_|_|||");
+            Console.WriteLine(@"                         ||_____|_|=|#|--| |\   \   o     \_____/  |~|  | | |||");
+            Console.WriteLine(@"                         ||_____|_|_|_|__|_|_\   \  o     | |_|_|__|_|__|_|_|||");
             Console.WriteLine(@"                         |_________ __________\___\_______|____________ ______|");
             Console.WriteLine(@"                         |__    _  /    ________     ______           /| _ _ _|");
             Console.WriteLine(@"                         |\ \  |=|/   //    /| //   /  /  / |        / ||%|%|%|");
@@ -58,20 +70,22 @@ namespace AHBC_2019_Midterm_JulyBC
             Console.WriteLine(@"                         |  \/\|/   /(____|/ //                    /  /||~|~|~|");
             Console.WriteLine(@"                         | ___\_/   /________//   ________         /  /||_|_|_|");
             Console.WriteLine(@"                         | ___ /   (|________/  |\_______\       /  /| |______|");
-            Console.WriteLine(@"                             /                  \|________)     /  / | |______|");
+            Console.WriteLine(@"                         |____/_________________\|________)_____/__/_|_|______|");
             Console.WriteLine("");
             Console.WriteLine("");
             #endregion
+
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
-
 
             do
             {
                 Console.Clear();
+                SaveLoad.Save(bookList);
+                bookList = SaveLoad.Load();
                 MenuOptions choice = LibraryMember.GetMenuSelection();
                 ExecuteMainMenuChoice(choice, bookList);
-            } while (appRunning);
+            } while (appRunning); 
         }
 
         public void ExecuteMainMenuChoice(MenuOptions choice, List<Book> bookList)
@@ -104,6 +118,13 @@ namespace AHBC_2019_Midterm_JulyBC
                 case MenuOptions.GoToCart:
                     Console.Clear();
                     Cart.BringUpCart(cart);
+                    appRunning = true;
+                    SaveLoad.Save(bookList);
+                    return;
+
+                case MenuOptions.ManageLibrary:
+                    Console.Clear();
+                    AddRemove.ManageLibrary(bookList);
                     appRunning = true;
                     SaveLoad.Save(bookList);
                     return;
