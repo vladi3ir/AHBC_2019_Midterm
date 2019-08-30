@@ -13,7 +13,8 @@ namespace AHBC_2019_Midterm_JulyBC
             using (var writer = new StreamWriter("./LibrarySaveFile.txt", false))
             //using (var writer = new StreamWriter("D:/GrandCircus/Midterm/AHBC_2019_Midterm/bin/Debug/netcoreapp2.1/LibrarySaveFile.txt", false))  
             {
-                foreach (var item in bookList)
+                IEnumerable<Book> orderedList = bookList.OrderBy(Book => Book.Title).ToList();
+                foreach (var item in orderedList)
                 {
                     string title = item.Title.ToString();
                     string author = item.Author.ToString();
